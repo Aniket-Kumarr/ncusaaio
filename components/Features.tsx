@@ -86,31 +86,31 @@ const Features = () => {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
       <div className="container-custom">
-        {/* Section Header */}
+        {/* Enhanced Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
-            <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-accent-100 text-primary-800 rounded-full text-sm font-semibold mb-6 border border-primary-200/50 shadow-lg">
+            <span className="w-3 h-3 bg-gradient-to-r from-primary-600 to-accent-600 rounded-full mr-3 shadow-lg"></span>
             Why Choose USAAIO NC?
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-8">
             Everything You Need to{' '}
-            <span className="text-gradient">Succeed in AI</span>
+            <span className="text-gradient-premium">Succeed in AI</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Our comprehensive platform provides all the tools, resources, and connections 
-            you need to excel in artificial intelligence and machine learning.
+            you need to excel in artificial intelligence and machine learning across North Carolina.
           </p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Enhanced Features Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -122,22 +122,22 @@ const Features = () => {
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
-              <div className="card h-full hover:shadow-2xl transition-all duration-300 group-hover:border-blue-200">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  {/* Icon */}
-                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${feature.color} shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110`}>
-                    <feature.icon className="h-8 w-8 text-white" />
+              <div className="card-premium h-full hover:shadow-3xl transition-all duration-500 group-hover:border-primary-200/70">
+                <div className="flex flex-col items-center text-center space-y-6">
+                  {/* Enhanced Icon */}
+                  <div className={`p-6 rounded-3xl bg-gradient-to-r ${feature.color} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                    <feature.icon className="h-10 w-10 text-white" />
                   </div>
                   
-                  {/* Content */}
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  {/* Enhanced Content */}
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                       {feature.description}
                     </p>
                   </div>
@@ -147,29 +147,29 @@ const Features = () => {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Enhanced Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="card-premium max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-slate-900 mb-6">
               Ready to Join the AI Revolution?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-slate-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
               Become part of North Carolina's most innovative AI community and start 
-              building the future today.
+              building the future today. Join 500+ professionals across the state.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="/register" className="btn-primary shadow-glow">
                 Get Started Now
-              </button>
-              <button className="btn-secondary">
+              </a>
+              <a href="#contact" className="btn-secondary">
                 Schedule a Demo
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>

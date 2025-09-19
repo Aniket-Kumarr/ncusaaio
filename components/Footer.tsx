@@ -69,11 +69,11 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-dark text-white">
       {/* Main Footer Content */}
-      <div className="container-custom py-16">
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* Brand Column */}
+      <div className="container-custom py-20">
+        <div className="grid lg:grid-cols-5 gap-12">
+          {/* Enhanced Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,20 +81,24 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="p-2 bg-gradient-to-r from-primary-600 to-accent-500 rounded-lg">
-                <Brain className="h-8 w-8 text-white" />
+            <div className="flex items-center space-x-4 mb-8">
+              <div className="p-3 bg-gradient-to-r from-primary-600 to-accent-500 rounded-xl shadow-lg">
+                <Brain className="h-10 w-10 text-white" />
               </div>
-              <span className="text-2xl font-bold text-gradient">USAAIO NC</span>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-gradient">USAAIO NC</span>
+                <span className="text-sm text-primary-300 -mt-1">North Carolina</span>
+              </div>
             </div>
             
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-slate-300 mb-8 leading-relaxed text-lg">
               North Carolina's premier artificial intelligence organization, fostering innovation, 
-              collaboration, and growth in the AI ecosystem. Join us in building the future of technology.
+              collaboration, and growth in the AI ecosystem across all of North Carolina. 
+              Join us in building the future of technology.
             </p>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            {/* Enhanced Quick Stats */}
+            <div className="grid grid-cols-2 gap-6 mb-8">
               {quickStats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -102,15 +106,16 @@ const Footer = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center group"
                 >
-                  <div className="text-2xl font-bold text-primary-400">{stat.number}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-3xl font-bold text-gradient group-hover:scale-110 transition-transform">{stat.number}</div>
+                  <div className="text-sm text-slate-400 group-hover:text-primary-300 transition-colors">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Social Links */}
+            {/* Enhanced Social Links */}
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -120,10 +125,11 @@ const Footer = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="p-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-200"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3 bg-slate-800/50 backdrop-blur-sm text-slate-300 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-6 w-6" />
                 </motion.a>
               ))}
             </div>
